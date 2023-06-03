@@ -1,0 +1,28 @@
+body{
+   background-color: black;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin: 80px 30vh;
+    gap: 10px;
+}
+
+input{
+    width: 480px
+
+}
+
+.titulo{
+    color: white;
+    padding: 15px 93vh;
+}
+
+.apresentacao {
+    color: white;
+    margin-left: 20%;
+}
