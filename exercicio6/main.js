@@ -11,6 +11,7 @@ const congelados = []
 const doces = []
 
 
+
 //função para voltar pra tela principal
 function telaPrincipal(){
 
@@ -48,14 +49,23 @@ function telaPrincipal(){
     });
 
     btnNao.addEventListener('click', evento => {
+
+        //criando ul e colocando no body
         const listaFrutas = document.createElement('ul')
         listaFrutas.textContent = 'Setor de frutas:'
         document.body.appendChild(listaFrutas);
+
         for (let i = 0; i < frutas.length; i++) {
-            
             const elementos = document.createElement('li');
             elementos.textContent = frutas[i]
+
+            const btn_remover = document.createElement('button')
+            btn_remover.textContent = 'X'
             listaFrutas.appendChild(elementos);
+            elementos.appendChild(btn_remover)
+            elementos.classList.add('item_lista')
+
+            removeritem(btn_remover, elementos)
         }
 
 
@@ -67,7 +77,14 @@ function telaPrincipal(){
             
             const elementos = document.createElement('li');
             elementos.textContent = lat[i];
+
+            const btn_remover = document.createElement('button')
+            btn_remover.textContent = 'X'
             listaLaticinios.appendChild(elementos);
+            elementos.appendChild(btn_remover);
+            elementos.classList.add('item_lista')
+
+            removeritem(btn_remover, elementos)
         }
 
 
@@ -78,7 +95,14 @@ function telaPrincipal(){
             
             const elementos = document.createElement('li');
             elementos.textContent = congelados[i];
+
+            const btn_remover = document.createElement('button')
+            btn_remover.textContent = 'X'
             listaCongelados.appendChild(elementos);
+            elementos.appendChild(btn_remover);
+            elementos.classList.add('item_lista')
+
+            removeritem(btn_remover, elementos)
         }
 
 
@@ -90,7 +114,14 @@ function telaPrincipal(){
             
             const elementos = document.createElement('li');
             elementos.textContent = doces[i];
+
+            const btn_remover = document.createElement('button')
+            btn_remover.textContent = 'X'
             listaDoces.appendChild(elementos);
+            elementos.appendChild(btn_remover);
+            elementos.classList.add('item_lista')
+
+            removeritem(btn_remover, elementos)
         }
     });
     
@@ -159,11 +190,61 @@ function adicionarItem (){
         doces.push(item)
     }
 
+
     telaPrincipal()
     
 }
 
 
+function removeritem (botao,elementos){
+
+    botao.addEventListener("click", evento =>{
+        let valor = elementos.textContent
+        
+        valor = valor.split('X')
+        valor.pop()
+        valorNovo = valor[0]
+        
+
+        var indexFrutas = frutas.indexOf(valorNovo) 
+        var indexCongelados = congelados.indexOf(valorNovo)
+        var indexDoces = doces.indexOf(valorNovo)
+        var indexLatnicios = lat.indexOf(valorNovo)
+
+        const filtroFruta = frutas.find(element => element = valorNovo)
+        const filtroCongelados = congelados.find(element => element = valorNovo)
+        const filtroDoces = doces.find(element => element = valorNovo)
+        const filtroLat = lat.find(element => element = valorNovo)
+        
+        console.log(frutas)
+        console.log(congelados)
+        console.log(doces)
+        console.log(lat)
+
+        if(filtroFruta != -1){
+            frutas.splice(indexFrutas, 1)
+            console.log(frutas)
+        }
+        if(filtroCongelados != -1){
+            congelados.splice(indexCongelados, 1)
+        }
+        if(filtroDoces != -1){
+            doces.splice(indexDoces, 1)
+            
+        }
+        if(filtroLat != -1){
+            lat.splice(indexLatnicios, 1)
+            
+        }
+
+        elementos.nodeParent.removeChild(elementos)
+
+    })
+
+
+
+
+}
 
 
 

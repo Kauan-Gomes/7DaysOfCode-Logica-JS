@@ -1,0 +1,7 @@
+.item_lista{
+border: 1px solid #7268683b;
+width: 140px;
+padding: 2px 10px;
+display: flex;
+justify-content: space-around;
+}

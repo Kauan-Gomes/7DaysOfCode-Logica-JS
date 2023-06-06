@@ -54,8 +54,9 @@ function telaPrincipal(){
         for (let i = 0; i < frutas.length; i++) {
             
             const elementos = document.createElement('li');
-            elementos.textContent = frutas[i]
+            elementos.textContent = frutas[i] 
             listaFrutas.appendChild(elementos);
+            
         }
 
 
@@ -66,8 +67,9 @@ function telaPrincipal(){
         for (let i = 0; i < lat.length; i++) {
             
             const elementos = document.createElement('li');
-            elementos.textContent = lat[i];
+            elementos.textContent = lat[i] 
             listaLaticinios.appendChild(elementos);
+
         }
 
 
@@ -130,7 +132,7 @@ for (let i = 0; i < botao.length; i++) {
                 } if(decisao === 'Não'){
                     const listaFrutas = document.createElement('h2')
                     listaFrutas.textContent = 'Não possui itens de compra:'
-                    document.body.appendChild(listaFrutas);
+                    
                 }
                 
                 
@@ -139,8 +141,6 @@ for (let i = 0; i < botao.length; i++) {
         }
     
     
-
-
 
 
 function adicionarItem (){
