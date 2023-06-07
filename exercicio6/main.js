@@ -179,8 +179,9 @@ function adicionarItem (){
     let item = document.querySelector('#produto').value 
     let categorias = document.querySelector('#categoria').value
     
-    
+    //validação para saber com qual categoria o item está associado
     if(categorias === 'frutas'){
+        //após ser validado, adicionar o item no array, por meio da função push()
         frutas.push(item)
     }else if(categorias === 'lat'){
         lat.push(item)
