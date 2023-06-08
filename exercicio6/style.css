@@ -5,3 +5,30 @@ padding: 2px 10px;
 display: flex;
 justify-content: space-around;
 }
+
+body{
+    border: 3px solid #7268683b;
+    background-color: aliceblue;
+    padding: 30px;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+body button{
+    background: white;
+    height: 27px;
+}
+
+body li{
+    margin-top: 5px;
+    background: white;
+}
+
+html{
+    background-image: url(../imagens/transferir\ \(1\).jpg);
+    background-repeat: initial;
+    display: flex;
+    justify-content:center;  
+    align-items: center;
+}
